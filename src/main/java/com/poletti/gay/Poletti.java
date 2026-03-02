@@ -2,6 +2,8 @@ package com.poletti.gay;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
+import net.fabricmc.fabric.api.registry.FuelRegistryEvents;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 
@@ -27,6 +29,15 @@ public class Poletti implements ModInitializer {
 
 		ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.INGREDIENTS)
 		.register((itemGroup) -> itemGroup.accept(ModItems.SUSPICIOUS_SUBSTANCE));
+
+		CompostingChanceRegistry.INSTANCE.add(ModItems.SUSPICIOUS_SUBSTANCE, 0.3f);
+
+		FuelRegistryEvents.BUILD.register((builder, context) -> {
+			builder.add(ModItems.SUSPICIOUS_SUBSTANCE, 30 * 20);
+		});
+
+		ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.TOOLS_AND_UTILITIES)
+		.register((itemGroup) -> itemGroup.accept(ModItems.PISELLO_NERO));
 
 		LOGGER.info("Hello Fabric world!");
 	}

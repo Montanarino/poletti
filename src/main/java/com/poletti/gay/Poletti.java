@@ -27,17 +27,24 @@ public class Poletti implements ModInitializer {
 
 		ModItems.initialize();
 
+		// CREATIVE TABS
 		ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.INGREDIENTS)
 		.register((itemGroup) -> itemGroup.accept(ModItems.SUSPICIOUS_SUBSTANCE));
+		ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.TOOLS_AND_UTILITIES)
+		.register((itemGroup) -> itemGroup.accept(ModItems.PISELLO_NERO));
 
+
+		// COMPOSTING
 		CompostingChanceRegistry.INSTANCE.add(ModItems.SUSPICIOUS_SUBSTANCE, 0.3f);
 
+
+		// FUELING
 		FuelRegistryEvents.BUILD.register((builder, context) -> {
 			builder.add(ModItems.SUSPICIOUS_SUBSTANCE, 30 * 20);
 		});
 
-		ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.TOOLS_AND_UTILITIES)
-		.register((itemGroup) -> itemGroup.accept(ModItems.PISELLO_NERO));
+		// ENTITIES
+		FabricDefaultAttributeRegistry.register(ModItems.POLETTI, IlMostro.createMobAttributes());
 
 		LOGGER.info("Hello Fabric world!");
 	}

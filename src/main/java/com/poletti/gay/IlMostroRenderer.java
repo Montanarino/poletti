@@ -6,11 +6,11 @@ public class IlMostroRenderer extends MobRenderer<IlMostro, IlMostroRenderState,
  
     @Override
 	public IlMostroRenderState createRenderState() {
-		return new CubeEntityRenderState();
+		return new IlMostroRenderState();
 	}
  
 	@Override
 	public Identifier getTextureLocation(IlMostroRenderState livingEntityRenderState) {
-		return Identifier.fromNamespaceAndPath(MOD_ID, "textures/entity/cube/cube.png");
+		return Identifier.fromNamespaceAndPath(MOD_ID, "textures/entity/poletti/poletti.png");
 	}
 }

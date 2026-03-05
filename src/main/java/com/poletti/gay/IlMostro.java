@@ -1,7 +1,12 @@
+package com.poletti.gay;
+
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.PathfinderMob;
+import net.minecraft.world.level.Level;
 
 public class IlMostro extends PathfinderMob {
  
-    public CubeEntity(EntityType<? extends PathfinderMob> entityType, Level level) {
+    public IlMostro(EntityType<? extends PathfinderMob> entityType, Level level) {
         super(entityType, level);
     }
 }

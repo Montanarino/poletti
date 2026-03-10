@@ -8,11 +8,15 @@ import net.fabricmc.fabric.api.registry.FuelRegistryEvents;
 import net.minecraft.commands.arguments.ResourceKeyArgument;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.entity.MobCategory;
+
+import javax.swing.text.html.parser.Entity;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,10 +31,16 @@ public class Poletti implements ModInitializer {
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
 	//Entities
+
     public static final EntityType<IlMostro> POLETTI = Registry.register(
             BuiltInRegistries.ENTITY_TYPE,
-            Identifier.fromNamespaceAndPath(Poletti.MOD_ID, "Poletti"),
-            EntityType.Builder.of(IlMostro::new, MobCategory.CREATURE).build(ResourceKey.createRegistryKey(Identifier.fromNamespaceAndPath(MOD_ID, "poletti")))
+            Identifier.fromNamespaceAndPath(Poletti.MOD_ID, "poletti"),
+            EntityType.Builder
+       			 .of(IlMostro::new, MobCategory.CREATURE)
+       			 .sized(0.6f, 1.95f)
+       			 .clientTrackingRange(80)
+      			 .updateInterval(3)
+      			 .build(ResourceKey.create(Registries.ENTITY_TYPE, Identifier.fromNamespaceAndPath(Poletti.MOD_ID, "poletti")))
     );
 
 	@Override

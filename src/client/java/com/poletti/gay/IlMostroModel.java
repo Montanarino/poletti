@@ -1,5 +1,7 @@
 package com.poletti.gay;
 
+
+import net.minecraft.client.model.*;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartNames;

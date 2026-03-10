@@ -8,7 +8,7 @@ import net.minecraft.resources.Identifier;
 
 public class PolettiClient implements ClientModInitializer {
 
-	public static final ModelLayerLocation MODEL_CUBE_LAYER = new ModelLayerLocation(Identifier.fromNamespaceAndPath("Poletti", "cube"), "main");
+	public static final ModelLayerLocation MODEL_CUBE_LAYER = new ModelLayerLocation(Identifier.fromNamespaceAndPath("poletti", "poletti"), "main");
 	@Override
 	public void onInitializeClient() {
 		

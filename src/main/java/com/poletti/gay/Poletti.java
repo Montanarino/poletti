@@ -55,7 +55,7 @@ public class Poletti implements ModInitializer {
 		ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.INGREDIENTS)
 		.register((itemGroup) -> itemGroup.accept(ModItems.SUSPICIOUS_SUBSTANCE));
 		ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.TOOLS_AND_UTILITIES)
-		.register((itemGroup) -> itemGroup.accept(ModItems.PISELLO_NERO));
+		.register((itemGroup) -> itemGroup.accept(ModItems.SPADONE));
 
 
 		// COMPOSTING

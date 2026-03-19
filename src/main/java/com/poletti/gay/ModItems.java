@@ -32,7 +32,7 @@ public class ModItems {
 
     // ITEMS
     public static final Item SUSPICIOUS_SUBSTANCE = register("suspicious_substance", Item::new, new Item.Properties());
-    public static final Item PISELLO_NERO = register("pisello_nero", Item::new, new Item.Properties().sword(SUSPICIOUS, 1f, 100f));
+    public static final Item SPADONE = register("spadone", Item::new, new Item.Properties().sword(SUSPICIOUS, 1f, 100f));
 
     // ENTITIES
 
